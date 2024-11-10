@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Create your Resume</title>
+</head>
+
+<body>
+    <div class="form-section">
+        <h1 class="form-h1">Fill Out Your Information</h1>
+        <form id="resumeForm" action="resume.html" method="get">
+            <!-- General Information -->
+            <div class="data">
+                <h1>General Information</h1>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter Your Full Name" />
+                    </div>
+                    <div class="input-div">
+                        <label for="role">Role:</label>
+                        <input type="text" id="role" name="role" placeholder="eg: Front-End Developer" />
+                    </div>
+                    <div class="input-div">
+                        <label for="profilePicture">Upload Profile Picture:</label>
+                        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" />
+                    </div>
+                </div>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter Your Email" />
+                    </div>
+                    <div class="input-div">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter Your Number" />
+                    </div>
+                    <div class="input-div">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required placeholder="Enter Your Address" />
+                    </div>
+                </div>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="profie">About:</label>
+                        <textarea id="profile" name="profile" rows="10"  placeholder="Write about yourself "></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="data">
+                <h1>Education</h1>
+
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="education">College/Institue Name:</label>
+                        <input type="text" id="college" name="college" required placeholder="Enter Your College Name" />
+                    </div>
+                    <div class="input-div">
+                        <label for="education">Subject/Group:</label>
+                        <input type="text" id="group" name="group" required placeholder="eg: Computer Science" />
+                    </div>
+                </div>
+
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="education">Start Year:</label>
+                        <input type="number" id="startYear" name="startYear" required />
+                    </div>
+                    <div class="input-div">
+                        <label for="education">End Year:</label>
+                        <input type="number" id="endYear" name="endYear" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="data">
+                <h1>Skills</h1>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="skills">Skills (comma separated):</label>
+                        <input type="text" id="skills" name="skills" required placeholder="Enter Your Skill" />
+                    </div>
+                    <div class="input-div">
+                        <label for="skillLevel">Skill Level (1-100):</label>
+                        <input type="text" id="skillLevel" name="skillLevel" min="1" max="100"
+                            placeholder="Enter Your Skill Level" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="data">
+                <h1>Work Experience</h1>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="company">Company:</label>
+                        <input type="text" id="company" name="company" required />
+                    </div>
+                    <div class="input-div">
+                        <label for="startyear">Work Year:</label>
+                        <input id="workYear" name="workYear" required />
+                    </div>
+                </div>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="Role">Role</label>
+                        <input id="roleTitle" name="roleTitle" required placeholder="Enter Your Role in Organization" />
+                    </div>
+                    <div class="input-div">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="roleTitle" required rows="6"
+                            placeholder="Write Your Work Experience in Organization"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data">
+                <h1>Languages</h1>
+                <div class="data-container">
+                    <div class="input-div">
+                        <label for="languages">Languages</label>
+                        <input id="languages" name="languages" required placeholder="eg: English,Urdu" />
+                    </div>
+                </div>
+            </div>
+            <div class="sub-div">
+                <input type="submit" value="Generate Resume" class="submit-btn" />
+            </div>
+        </form>
+    </div>
+    <main class="resume-section">
+        <div class="btn">
+            <button id="downloadBtn">Download Resume</button>
+        </div>
+
+        <div class="resume">
+            <div class="resume-container">
+                <div class="left-side">
+                    <div class="profile-info">
+                        <div class="profile">
+                            <img id="displayProfileImage" src="" alt="Profile Picture" style="
+                    display: none;
+                  " />
+                        </div>
+                        <!-- Name and Role -->
+                        <h2 id="displayName" class="editable" contenteditable="true">
+                            Maryam Shahid
+                        </h2>
+                        <h4 id="displayRole" class="editable" contenteditable="true">
+                            Front-End Developer
+                        </h4>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2 class="contact">CONTACT</h2>
+                        <div class="num">
+                            <i class="fa-solid fa-phone"></i>
+                            <p id="displayPhone" class="editable" contenteditable="true">
+                                03183782322
+                            </p>
+                        </div>
+                        <div class="gmail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p id="displayEmail" class="editable" contenteditable="true">
+                                maryamshahid772@gmail.com
+                            </p>
+                        </div>
+                        <div class="address">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p id="displayAddress" class="editable" contenteditable="true">
+                                Karachi, Pakistan
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="education-info">
+                        <h2>EDUCATION</h2>
+                        <div class="college">
+                            <p id="displayCollege" class="editable" contenteditable="true">
+                                Karachi University
+                            </p>
+                        </div>
+                        <div class="group">
+                            <p id="displayGroup" class="editable" contenteditable="true">
+                                Bachlor of Commerce
+                            </p>
+                        </div>
+                        <div class="year">
+                            <p id="displayStartYear" class="editable" contenteditable="true">
+                                2018
+                            </p>
+                            _
+                            <p id="displayEndYear" class="editable" contenteditable="true">
+                                2022
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skills-info">
+                        <h2>SKILLS</h2>
+                        <ul id="displaySkills">
+                            <!-- Skills will be inserted dynamically here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="right-side">
+                    <div class="about-profile">
+                        <h1>PROFILE</h1>
+                        <p id="displayProfile" class="editable" contenteditable="true">
+                            <!-- Profile description dynamically -->
+                        </p>
+                    </div>
+
+                    <div class="work-experience">
+                        <h1>WORK EXPERIENCE</h1><br>
+                        <div class="company-details">
+                            <h3 id="displayCompany" class="editable" contenteditable="true">
+                                GIAIC
+                            </h3>
+                            <p id="displayWorkYear" class="editable" contenteditable="true">
+                                2024
+                            </p>
+                        </div>
+                        <div class="role">
+                            <h5 id="displayRoleTitle" class="editable" contenteditable="true">
+                                Front-End Developer
+                            </h5>
+                            <p id="displayWorkDescription" class="editable" contenteditable="true">
+                                <!-- Work experience details -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="languages">
+                        <h1>LANGUAGES</h1>
+                        <ul id="displayLanguages"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
